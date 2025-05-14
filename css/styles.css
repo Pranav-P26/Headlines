@@ -135,10 +135,25 @@ ul {
 
 /* Hero Section */
 .hero {
-    background: url('/assets/images/backgroundHero.jpg') no-repeat center center/cover;
     position: relative;
-    height: auto;
     min-height: 100vh;
+
+    /* high-vibrancy warm gradient */
+    background: linear-gradient(
+       135deg,
+       #FFF1E6,  /* light cream */
+       #FFD6C2,  /* pastel peach */
+       #FFB08C,  /* warm apricot */
+       #FF7E5F   /* vibrant coral */
+    );
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+}
+
+@keyframes gradientBG {
+    0%   { background-position:   0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position:   0% 50%; }
 }
 
 .hero::before {
