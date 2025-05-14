@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healing with Headlines</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="#" class="logo">
+                <img src="assets/images/logo.png" alt="Healing Headlines Logo" class="logo-img">
+                <span>Healing Headlines</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#toolkit" class="nav-link">Toolkit</a></li>
+                <li class="nav-item"><a href="#affirmations" class="nav-link">Affirmations</a></li>
+                <li class="nav-item"><a href="#pause" class="nav-link">Pause & Reflect</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="#spotify" class="nav-link">Resources</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1>Healing with Headlines</h1>
+            <p>Transforming your news experience into moments of mindfulness and well-being</p>
+            <div class="hero-buttons">
+                <a href="#toolkit" class="btn btn-primary">Explore Toolkit</a>
+                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                <a id="download-app" href="assets/headlines.apk" class="btn btn-tertiary" download style="display:none;">
+                    Download the App!
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Mission</h3>
+                    <p>Welcome to Healing with Headlines, where we believe in the power of words to heal and inspire. Our mission is to provide uplifting content that promotes mental well-being in a world often dominated by stressful news.</p>
+                    <br>
+                    <p>We understand that staying informed is important, but so is maintaining your mental health. That's why we've created tools and resources to help you balance both, transforming your news consumption into an experience that nurtures rather than drains.</p>
+                </div>
+                <div class="about-image">
+                    <img src="/assets/images/HeadlinesPeople.jpg" alt="Healing with Headlines mission">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+            </div>
+            <div class="services-container">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <h3>Podcasts & Interviews</h3>
+                    <p>We produce podcast interviews in collaboration with NAMI (National Alliance on Mental Illness) and Navigatin for Success Through Wellness to shed light on the effects of toxic media on youth mental health. These episodes featured expert insights and personal stories to educate and empower young listeners.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-money-bills"></i>
+                    </div>
+                    <h3>Fundraisers</h3>
+                    <p>We conduct fundraisers to support alliances like NAMI (National Alliance on Mental Illness) to fight towards the common goal of offering mental health resources and making the world a better place.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Workshops and Events</h3>
+                    <p>We host interactive sessions designed to build mental health literacy and strengthen emotional resilience, equipping you with the tools to support yourself during challenging times.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toolkit Section -->
+    <section id="toolkit" class="toolkit">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mental Health Toolkit</h2>
+            </div>
+            <p class="text-center">Click on any technique to learn more:</p>
+            <br>
+            <div class="toolkit-list" id="toolkit-list">
+                <!-- Toolkit items will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Affirmations Section -->
+    <section id="affirmations" class="affirmations">
+        <div class="container">
+            <div class="section-title">
+                <h2>Emotion-Based Affirmation Generator</h2>
+            </div>
+            <div class="affirmation-container">
+                <div class="affirmation-form">
+                    <input type="text" id="emotion-input" class="affirmation-input" placeholder="How are you feeling today?">
+                    <button id="generate-affirmation">Generate</button>
+                </div>
+                <div id="affirmation-output">Your personalized affirmation will appear here</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pause Section -->
+    <section id="pause" class="pause">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pause & Reflect</h2>
+            </div>
+            <div class="pause-container">
+                <p>Take a moment to breathe and reset with our guided breathing exercise:</p>
+                <button id="start-breathing">Start Breathing Exercise</button>
+                <div id="breathing-guide"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breathing Overlay -->
+    <div id="breathing-overlay" class="breathing-overlay">
+      <div class="breathing-circle-container">
+        <div id="breathing-circle" class="breathing-circle"></div>
+        <div id="breathing-text" class="breathing-text">Get Ready</div>
+      </div>
+      <audio id="calm-audio" src="assets/calm.mp3" preload="auto" loop></audio>
+    </div>
+
+    <!-- Spotify Section -->
+    <section id="spotify" class="spotify-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Spotify</h2>
+        </div>
+        <ul class="spotify-list">
+          <li>
+            <a href="https://open.spotify.com/playlist/029K8CSC8AWKjU5UyWhiPr?si=xlQ1hf5BT26UpWALrNWf2g" target="_blank">
+              <i class="fab fa-spotify"></i>
+              Healing Headlines Playlist
+            </a>
+          </li>
+          <li>
+            <a href="https://open.spotify.com/show/1se10ZVf5f0wvjwTFPHafn?si=910957af0097422e" target="_blank">
+              <i class="fas fa-podcast"></i>
+              Healing Headlines Podcast
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Downloads Section -->
+    <section id="downloads" class="resources">
+      <div class="container">
+        <div class="section-title">
+          <h2>Downloads</h2>
+        </div>
+        <ul class="downloads-list">
+          <li>
+            <a href="assets/AboutHeadlines.pdf" download>
+              <i class="fas fa-file-pdf"></i>
+              About Headlines (PDF)
+            </a>
+          </li>
+          <li>
+            <a href="assets/ResearchStudy.pdf" download>
+              <i class="fas fa-file-pdf"></i>
+              Research Study (PDF)
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Additional Resources Section -->
+    <section id="external-resources" class="external-resources">
+      <div class="container">
+        <div class="section-title">
+          <h2>Additional Resources</h2>
+        </div>
+        <ul class="resources-list">
+          <li>
+            <a href="https://www.211.org/" target="_blank">
+              <i class="fas fa-phone-alt"></i>
+              211 National Hotline
+            </a>
+          </li>
+          <li>
+            <a href="https://neolth.com" target="_blank">
+              <i class="fas fa-atom"></i>
+              NEOLTH Platform
+            </a>
+          </li>
+          <li>
+            <a href="https://www.samhsa.gov" target="_blank">
+              <i class="fas fa-hospital-user"></i>
+              SAMHSA
+            </a>
+          </li>
+          <li>
+            <a href="https://nami.org" target="_blank">
+              <i class="fas fa-hands-helping"></i>
+              NAMI
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+          <div class="section-title">
+            <h2>Contact Us</h2>
+          </div>
+          <div class="contact-container">
+            <div class="contact-info">
+              <h3>Get in Touch</h3>
+              <p>
+                If you have any questions or would like to learn more about our services, please reach out to us!
+              </p>
+      
+              <div class="contact-detail">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                  <h4>Location</h4>
+                  <p>Morris County School of Technology</p>
+                </div>
+              </div>
+      
+              <div class="contact-detail">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                  <h4>Email</h4>
+                  <p>healingfromheadlines.hosa@gmail.com</p>
+                </div>
+              </div>
+      
+              <p>Take a look at our socials for all of our awesome work!</p>
+      
+              <div class="social-links contact-social-links">
+                <a href="https://www.instagram.com/healingfromheadlines.hosa/" class="social-link" target="_blank">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@healingfromheadlines" class="social-link" target="_blank">
+                  <i class="fab fa-tiktok"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo.png" alt="Healing Headlines Logo" class="logo-img">
+                        <span>Healing Headlines</span>
+                    </div>
+                    <p>Transforming your news experience into moments of mindfulness and well-being.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/healingfromheadlines.hosa/" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@healingfromheadlines" class="social-link">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://open.spotify.com/playlist/029K8CSC8AWKjU5UyWhiPr?si=xlQ1hf5BT26UpWALrNWf2g" class="social-link">
+                            <i class="fab fa-spotify"></i>
+                        </a>
+                        <a href="https://open.spotify.com/show/1se10ZVf5f0wvjwTFPHafn?si=910957af0097422e" class="social-link">
+                            <i class="fas fa-podcast"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#toolkit">Toolkit</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#spotify">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://linktr.ee/healingfromheadlines.hosa">Link Tree</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- load scripts -->
+    <script type="module" src="js/scripts.js"></script>
+</body>
+</html>
