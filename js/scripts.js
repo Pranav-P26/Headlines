@@ -1,5 +1,3 @@
-import { OPENAI_API_KEY } from '../config.js';
-
 // 1. Mental Health Toolkit
 const toolkitIcons = [
     "fa-wind",
