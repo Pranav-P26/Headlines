@@ -1,4 +1,4 @@
-import { OPENAI_API_KEY } from './config.js';
+import { OPENAI_API_KEY } from '../config.js';
 
 // 1. Mental Health Toolkit
 const toolkitIcons = [
@@ -16,8 +16,6 @@ const toolkitItems = [
   {name: "Short Guided Meditation", description: "Focus your mind for 5 minutes on calming thoughts"},
   {name: "Journaling Prompt", description: "Write about how the news made you feel and what you can control"}
 ];
-
-console.log('Loaded API key:', OPENAI_API_KEY);
 
 function renderToolkit() {
   const ul = document.getElementById("toolkit-list");
@@ -75,31 +73,32 @@ document.querySelectorAll('.toolkit-item').forEach(item => {
 document
   .getElementById("generate-affirmation")
   .addEventListener("click", async () => {
+
     const emotion =
       document.getElementById("emotion-input").value.trim() || "this moment";
     const output = document.getElementById("affirmation-output");
     output.textContent = "Generating affirmation…";
 
+    // build messages just as before
+    const messages = [
+      {
+        role: "system",
+        content:
+          "You provide uplifting, personalized affirmations. Never reveal that you are an AI. Only print the affirmation.",
+      },
+      {
+        role: "user",
+        content: `I am feeling ${emotion} after reading the news. Give me one unique affirmation to help.`,
+      },
+    ];
+
     try {
-      const res = await fetch("https://api.openai.com/v1/chat/completions", {
+      const res = await fetch("https://headlinesbackend-mwo3.onrender.com/chat", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${OPENAI_API_KEY}`,
-        },
-        body: JSON.stringify({
-          model: "gpt-4.1",
-          messages: [
-            { role: "system", content: "You provide uplifting, personalized affirmations. Never reveal that you are an AI. Only print the affirmation." },
-            {
-              role: "user",
-              content: `I am feeling ${emotion} after reading the news. Give me one unique affirmation to help.`,
-            },
-          ],
-          max_tokens: 60,
-          temperature: 0.8,
-        }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages }),
       });
+      
 
       const json = await res.json();
       output.textContent =
