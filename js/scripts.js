@@ -86,9 +86,9 @@ document
           Authorization: `Bearer ${OPENAI_API_KEY}`,
         },
         body: JSON.stringify({
-          model: "gpt-3.5-turbo",
+          model: "gpt-4.1",
           messages: [
-            { role: "system", content: "You provide uplifting, personalized affirmations." },
+            { role: "system", content: "You provide uplifting, personalized affirmations. Never reveal that you are an AI. Only print the affirmation." },
             {
               role: "user",
               content: `I am feeling ${emotion} after reading the news. Give me one unique affirmation to help.`,
