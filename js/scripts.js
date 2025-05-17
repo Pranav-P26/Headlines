@@ -17,6 +17,8 @@ const toolkitItems = [
   {name: "Journaling Prompt", description: "Write about how the news made you feel and what you can control"}
 ];
 
+console.log('Loaded API key:', OPENAI_API_KEY);
+
 function renderToolkit() {
   const ul = document.getElementById("toolkit-list");
   ul.innerHTML = ''; // clear existing items
